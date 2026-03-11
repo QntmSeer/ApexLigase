@@ -40,7 +40,7 @@ Before scaling the pipeline, we validated the initial `design_9` lead to establi
 ![Design_9 RMSD](assets/rmsd_stability.png)
 **Backbone RMSD**: Stable at ~0.2 nm, indicating a well-folded core.
 <!-- slide -->
-![Design_9 Rg](assets/rg_compactness.png)
+![Design_9 Rg](assets/rg_compactness_premium.png)
 **Radius of Gyration**: Consistent compactness over the 100ns trajectory.
 <!-- slide -->
 ![Design_9 HBonds](assets/hbonds_interface.png)
@@ -88,7 +88,7 @@ To ensure this static prediction translates to dynamic stability, we extracted t
 
 `batch2_design_3` clearly exhibits tighter interface locking and lower residue fluctuations throughout the trajectory phase, corroborating the Chai-1 confidence metrics:
 ````carousel
-![RMSD Comparison](assets/rmsd_comparison.png)
+![RMSD Comparison](assets/rmsd_comparison_premium.png)
 **Backbone RMSD Comparison**: `batch2_design_3` exhibits a lower, more rapidly stabilized global RMSD compared to `design_9`.
 <!-- slide -->
 ![RMSF Comparison](assets/rmsf_comparison.png)

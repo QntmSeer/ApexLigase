@@ -19,7 +19,7 @@ The initial lead exhibits a robust folding funnel and persistent interface conta
 
 ````carousel
 ![Backbone Stability](assets/rmsd_stability.png)
-![Compactness](assets/rg_compactness.png)
+![Compactness](assets/rg_compactness_premium.png)
 ![Binding Persistence](assets/hbonds_interface.png)
 <!-- slide -->
 ![Simulation Animation](assets/design_9_animation_v2.gif)
