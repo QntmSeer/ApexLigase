@@ -17,13 +17,13 @@ This repository contains the computational pipeline and validation data for **De
 ## Key Results: Design_9 Baseline
 The initial lead exhibits a robust folding funnel and persistent interface contact at the RBX1 binding site.
 
-````carousel
-![Backbone Stability](assets/rmsd_stability.png)
-![Compactness](assets/rg_compactness_premium.png)
-![Binding Persistence](assets/hbonds_interface.png)
-<!-- slide -->
+### Simulation Overview
 ![Simulation Animation](assets/design_9_animation_v2.gif)
-````
+
+### Stability Metrics
+| Backbone Stability | Compactness | Binding Persistence |
+|:---:|:---:|:---:|
+| ![Backbone Stability](assets/rmsd_stability.png) | ![Compactness](assets/rg_compactness_premium.png) | ![Binding Persistence](assets/hbonds_interface.png) |
 
 -   **Structural Stability**: Backbone RMSD stabilized at **~0.2 nm** over 100ns.
 -   **Compactness**: Radius of gyration (Rg) remained consistent throughout.
