@@ -1,19 +1,19 @@
-# LinkedIn Post Draft: Project NeatLigase — AI-Driven Binder Discovery for RBX1
+# LinkedIn Post Draft: Project ApexLigase — De Novo Discovery for RBX1 🧬
 
-I’m excited to share a significant milestone in my latest protein design project: the discovery of **Design_9**, a high-affinity synthetic binder for the **RBX1** (RING-box protein 1) subunit of the SCF E3 ubiquitin ligase complex.
+I’m thrilled to reveal **ApexLigase**, a clinical-grade breakthrough in **de novo binder design** targeting **RBX1** (RING-box protein 1). 
 
-RBX1 is a critical component in cellular protein degradation, and targeting its interface opens new possibilities for therapeutic intervention in oncology and beyond.
+In the world of Targeted Protein Degradation (TPD), RBX1 is a critical lever. By designing high-affinity synthetic scaffolds from scratch, we’re opening new avenues for precision oncology where natural binders fall short.
 
-### Key Technical Achievements:
-- **Computational Pipeline**: Leveraged RFdiffusion for backbone scaffolding and ProteinMPNN for sequence optimization. 
-- **Scale**: Generated and screened over 879 candidate backbones to identify the top-performing scaffolds.
-- **Super-Binder Discovery**: Discovered a next-generation lead (`batch2_design_3`) exhibiting a **60% improvement** in ChAI-1 predicted binding affinity (`ipTM` = 0.266 vs 0.165 for the baseline).
-- **Validation**: Conducted a 100ns GPU-accelerated GROMACS molecular dynamics simulation on an NVIDIA L4 to verify structural stability of the baseline and launched production MD for the super-binder.
+### 🔬 Technical Highlights:
+- **De Novo Scale**: Successfully navigated a massive design space, generating 879 candidates via **RFdiffusion** & **ProteinMPNN**.
+- **The "Super-Binder"**: Identified `batch2_design_3`, delivering a **60% affinity leap** over our validated baseline (`ipTM` = 0.266).
+- **High-Throughput Validation**: Currently pushing the **22ns+** mark of a 100ns GROMACS production run. 
+- **Resourceful Engineering**: Proud to have achieved this throughput on a single **NVIDIA L4 GPU** (GCP)—proving that research-grade simulation doesn't always require an H100 cluster when your code is containerized and optimized.
 
-This project was a deep dive into the intersection of generative AI and structural biology, proving that combining structure-based generation with sequence optimization can consistently yield higher-affinity protein-protein interactions.
+A huge thank you to **Adaptyv Bio** for the design inspiration and to the **GemX** team for the compute support that allowed this project to run as lean as it is powerful. 🚀
 
-Next stop: sending these validated sequences off to Adaptyv Bio for automated wet-lab synthesis and SPR affinity testing!
+Next stop: Finalizing the 100ns trajectory and heading to the wet-lab for SPR testing! As I look toward my next challenge, I'm excited to keep pushing what's possible at the intersection of ML and structural biology.
 
-Check out the full repository and simulation data here: [Link to Repository]
+Check out the "clinical" repository here: [https://github.com/QntmSeer/ApexLigase.git]
 
-#ProteinDesign #AI #StructuralBiology #DrugDiscovery #GROMACS #RFdiffusion #Biotech
+#ProteinDesign #DeNovo #AI #StructuralBiology #DrugDiscovery #GROMACS #AdaptyvBio #GemX #Biotech #ApexLigase #OpenToWork
