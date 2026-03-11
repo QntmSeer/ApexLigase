@@ -1,0 +1,9 @@
+- inference.output_prefix=/home/shadeform/rbx1_binder_design/outputs/arm2_rfdiffusion/backbones/binder
+- inference.model_directory_path=/home/shadeform/rbx1_binder_design/RFdiffusion/models
+- inference.input_pdb=/home/shadeform/rbx1_binder_design/target/rbx1_ring.pdb
+- ppi.hotspot_res=['A43','A44','A46','A54','A55','A57','A58','A87','A91','A95','A96']
+- contigmap.contigs=[A40-108/0 60-100]
+- inference.num_designs=300
+- denoiser.noise_scale_ca=0.5
+- denoiser.noise_scale_frame=0.5
+- inference.ckpt_override_path=/home/shadeform/rbx1_binder_design/RFdiffusion/models/Base_ckpt.pt
