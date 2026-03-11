@@ -18,9 +18,11 @@ This repository contains the computational pipeline and validation data for **De
 The initial lead exhibits a robust folding funnel and persistent interface contact at the RBX1 binding site.
 
 ````carousel
-![Backbone Stability](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsd_stability.png)
-![Compactness](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rg_compactness.png)
-![Binding Persistence](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/hbonds_interface.png)
+![Backbone Stability](assets/rmsd_stability.png)
+![Compactness](assets/rg_compactness.png)
+![Binding Persistence](assets/hbonds_interface.png)
+<!-- slide -->
+![Simulation Animation](assets/design_9_animation_v2.gif)
 ````
 
 -   **Structural Stability**: Backbone RMSD stabilized at **~0.2 nm** over 100ns.

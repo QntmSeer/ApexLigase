@@ -37,14 +37,17 @@ The 100ns simulation confirmed that Design_9 is a **stable binder** (1.5-2.1Å i
 Before scaling the pipeline, we validated the initial `design_9` lead to establish a baseline for affinity and stability.
 
 ````carousel
-![Design_9 RMSD](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsd_stability.png)
+![Design_9 RMSD](assets/rmsd_stability.png)
 **Backbone RMSD**: Stable at ~0.2 nm, indicating a well-folded core.
 <!-- slide -->
-![Design_9 Rg](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rg_compactness.png)
+![Design_9 Rg](assets/rg_compactness.png)
 **Radius of Gyration**: Consistent compactness over the 100ns trajectory.
 <!-- slide -->
-![Design_9 HBonds](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/hbonds_interface.png)
+![Design_9 HBonds](assets/hbonds_interface.png)
 **Interface Persistence**: Persistent hydrogen bonding network at the RBX1 interface.
+<!-- slide -->
+![Design_9 Animation](assets/design_9_animation_v2.gif)
+**Atomistic Trajectory**: Visual verification of binding mode and loop stability.
 ````
 
 ### Phase 15: Mass Generation (879 Backbones)
@@ -85,10 +88,10 @@ To ensure this static prediction translates to dynamic stability, we extracted t
 
 `batch2_design_3` clearly exhibits tighter interface locking and lower residue fluctuations throughout the trajectory phase, corroborating the Chai-1 confidence metrics:
 ````carousel
-![RMSD Comparison](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsd_comparison.png)
+![RMSD Comparison](assets/rmsd_comparison.png)
 **Backbone RMSD Comparison**: `batch2_design_3` exhibits a lower, more rapidly stabilized global RMSD compared to `design_9`.
 <!-- slide -->
-![RMSF Comparison](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsf_comparison.png)
+![RMSF Comparison](assets/rmsf_comparison.png)
 **Residue Fluctuation (RMSF)**: Termini and interface loops are markedly rigidified in the super-binder structure.
 ````
 
