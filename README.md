@@ -2,7 +2,6 @@
 > *Not a legend, but a neat ligase nonetheless.*
 
 
-[![Status](https://img.shields.io/badge/Status-Simulation_Complete-green.svg)]()
 [![GROMACS](https://img.shields.io/badge/Simulation-GROMACS_2024.2-blue.svg)]()
 [![Hardware](https://img.shields.io/badge/Hardware-NVIDIA_L4-orange.svg)]()
 
