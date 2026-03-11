@@ -14,10 +14,18 @@ This repository contains the computational pipeline and validation data for **De
 2.  **Sequence Optimization**: Optimized residues for binding affinity and folding stability using **ProteinMPNN**.
 3.  **Molecular Dynamics Validation**: Conducted a 100ns production run in **GROMACS** (OPLS-AA force field, TIP3P water) to confirm structural integrity and binding persistence.
 
-## Key Results: Design_9
--   **Structural Stability**: Backbone RMSD stabilized at **~0.2 nm** over 100ns, indicating a robust folding funnel and persistent interface contact.
--   **Compactness**: Radius of gyration (Rg) remained consistent throughout the trajectory.
--   **Binding Interface**: Hydrogen bond persistence analysis confirms a stable network of interactions at the binder-target interface.
+## Key Results: Design_9 Baseline
+The initial lead exhibits a robust folding funnel and persistent interface contact at the RBX1 binding site.
+
+````carousel
+![Backbone Stability](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsd_stability.png)
+![Compactness](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rg_compactness.png)
+![Binding Persistence](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/hbonds_interface.png)
+````
+
+-   **Structural Stability**: Backbone RMSD stabilized at **~0.2 nm** over 100ns.
+-   **Compactness**: Radius of gyration (Rg) remained consistent throughout.
+-   **Binding Interface**: Hydrogen bond persistence analysis confirms a stable network.
 
 ## Repository Structure
 -   `data/`: Raw trajectories and structural files (PDB/GRO).

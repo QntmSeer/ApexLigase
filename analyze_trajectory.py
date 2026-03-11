@@ -9,11 +9,9 @@ from rmsx import run_rmsx, run_rmsx_flipbook
 def analyze_and_plot(open_pdb, open_dcds, closed_pdb, closed_dcds, output_dir):
     print(f"Loading topologies and {len(open_dcds)} Open replicas / {len(closed_dcds)} Closed replicas...")
     
-    # Load all replica trajectories
     t_opens = [md.load(dcd, top=open_pdb) for dcd in open_dcds]
     t_closeds = [md.load(dcd, top=closed_pdb) for dcd in closed_dcds]
     
-    # Concatenate replicas into single massive trajectories for global analysis
     t_open = t_opens[0] if len(t_opens) == 1 else t_opens[0].join(t_opens[1:])
     t_closed = t_closeds[0] if len(t_closeds) == 1 else t_closeds[0].join(t_closeds[1:])
     
@@ -76,11 +74,9 @@ def analyze_and_plot(open_pdb, open_dcds, closed_pdb, closed_dcds, output_dir):
     
     print("\n--- Running High-Resolution RMSX Mapping ---")
     try:
-        # Run RMSX on just the first replica of each to save generating 6 flipbooks
         rmsx_out_open = os.path.join(output_dir, "RMSX_Open_Rep1")
-        print(f"Running RMSX on Open State Trajectory (Rep 1: {open_dcds[0]})...")
-        run_rmsx(topology_file=open_pdb, trajectory_file=open_dcds[0], output_dir=rmsx_out_open, num_slices=10, triple=True, palette='mako', overwrite=True)
-        run_rmsx_flipbook(topology_file=open_pdb, trajectory_file=open_dcds[0], output_dir=rmsx_out_open, num_slices=10, spacingFactor="0.6", palette='mako', overwrite=True)
+        run_rmsx(open_pdb, open_dcds[0], rmsx_out_open, num_slices=10, triple=True, palette='mako', overwrite=True)
+        run_rmsx_flipbook(open_pdb, open_dcds[0], rmsx_out_open, num_slices=10, spacingFactor="0.6", palette='mako', overwrite=True)
         
         rmsx_out_closed = os.path.join(output_dir, "RMSX_Closed_Rep1")
         print(f"Running RMSX on Closed State Trajectory (Rep 1: {closed_dcds[0]})...")

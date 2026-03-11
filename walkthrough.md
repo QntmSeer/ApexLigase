@@ -33,8 +33,22 @@ The 100ns simulation confirmed that Design_9 is a **stable binder** (1.5-2.1Å i
 - **Flexible Hotspots**: The termini show fluctuations >0.2 nm, contributing to entropy loss.
 - **Top Mutations**: Stabilizing Res 1-10 (N-term) and 55-62 (C-term) with bulky hydrophobics (Trp/Phe) or structural anchors (Pro) is recommended to harden the binding pose.
 
-## 4. Scaling the Pipeline: 879nd Generation Batch
-We transitioned from single-candidate validation to high-throughput processing. All 879 new backbones have been processed through the sequence design pipeline.
+### Initial Baseline: Design_9
+Before scaling the pipeline, we validated the initial `design_9` lead to establish a baseline for affinity and stability.
+
+````carousel
+![Design_9 RMSD](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsd_stability.png)
+**Backbone RMSD**: Stable at ~0.2 nm, indicating a well-folded core.
+<!-- slide -->
+![Design_9 Rg](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rg_compactness.png)
+**Radius of Gyration**: Consistent compactness over the 100ns trajectory.
+<!-- slide -->
+![Design_9 HBonds](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/hbonds_interface.png)
+**Interface Persistence**: Persistent hydrogen bonding network at the RBX1 interface.
+````
+
+### Phase 15: Mass Generation (879 Backbones)
+Using the validated `design_9` interface as a blueprint, we launched a high-throughput processing. All 879 new backbones have been processed through the sequence design pipeline.
 
 ### Comparative Leaderboard (Top 5 Leads)
 | Candidate | ProteinMPNN Score | Improvement focus |

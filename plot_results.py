@@ -17,7 +17,6 @@ def parse_xvg(filename):
 def plot_stability():
     os.makedirs('plots', exist_ok=True)
     
-    # 1. RMSD Plot
     rmsd_df = parse_xvg('rmsd.xvg')
     plt.figure(figsize=(10, 6))
     plt.plot(rmsd_df['Time'], rmsd_df['Value'], color='#1f77b4', linewidth=1.5, alpha=0.8)
@@ -29,7 +28,6 @@ def plot_stability():
     plt.savefig('plots/rmsd_stability.png', dpi=300, bbox_inches='tight')
     plt.close()
 
-    # 2. Radius of Gyration Plot
     rg_df = parse_xvg('gyrate.xvg')
     plt.figure(figsize=(10, 6))
     plt.plot(rg_df['Time'], rg_df['Value'], color='#d62728', linewidth=1.5, alpha=0.8)
@@ -40,7 +38,6 @@ def plot_stability():
     plt.savefig('plots/rg_compactness.png', dpi=300, bbox_inches='tight')
     plt.close()
 
-    # 3. Hydrogen Bonds Plot
     hb_df = parse_xvg('hbonds.xvg')
     plt.figure(figsize=(10, 6))
     plt.plot(hb_df['Time'], hb_df['Value'], color='#2ca02c', linewidth=1.5, alpha=0.8)
