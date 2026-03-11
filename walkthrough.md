@@ -14,13 +14,16 @@ To ensure the binder's performance in a physiological environment, we conducted 
 ### Refined Stability Results
 The simulation achieved a peak throughput of **~230 ns/day**, allowing for a deep-dive validation of the binder's residue-level behavior.
 
-### Initial Stability Metrics
-![Simulation Animation v2](assets/design_9_animation_v2.gif)
-**Refined 100ns MD Trajectory**: Fixed PBC artifacts and optimized for architectural inspection.
-
-| Backbone RMSD | Residue Fluctuation (RMSF)|
-|:---:|:---:|
-| ![RMSD Stability](assets/rmsd_stability.png) | ![Residue Stability](assets/rmsf_comparison.png) |
+````carousel
+![Simulation Animation v2](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/design_9_animation_v2.gif)
+**Refined 100ns MD Trajectory**: Fixed PBC artifacts and slower playback (10 FPS) for architectural inspection.
+<!-- slide -->
+![Residue Stability](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsf_analysis.png)
+**RMSF Analysis**: Fluctuations remain low in the binder core (<0.15 nm), but highlight flexible interface loops.
+<!-- slide -->
+![RMSD Stability](C:/Users/Gebruiker/.gemini/antigravity/brain/6d7c4b60-669a-4a05-ab38-a1dead1613d0/rmsd_stability.png)
+**Backbone RMSD**: Global stability confirmed with equilibrium reached at ~0.2 nm.
+````
 
 ## 3. Design Improvements for Design_9
 The 100ns simulation confirmed that Design_9 is a **stable binder** (1.5-2.1Å interface distance). However, residue-level analysis (RMSF) reveals optimization targets:
@@ -33,13 +36,19 @@ The 100ns simulation confirmed that Design_9 is a **stable binder** (1.5-2.1Å i
 ### Initial Baseline: Design_9
 Before scaling the pipeline, we validated the initial `design_9` lead to establish a baseline for affinity and stability.
 
-### Design_9 Baseline Visuals
-| RMSD | Radius of Gyration | HBonds |
-|:---:|:---:|:---:|
-| ![Design_9 RMSD](assets/rmsd_stability.png) | ![Design_9 Rg](assets/rg_compactness_premium.png) | ![Design_9 HBonds](assets/hbonds_interface.png) |
-
+````carousel
+![Design_9 RMSD](assets/rmsd_stability.png)
+**Backbone RMSD**: Stable at ~0.2 nm, indicating a well-folded core.
+<!-- slide -->
+![Design_9 Rg](assets/rg_compactness_premium.png)
+**Radius of Gyration**: Consistent compactness over the 100ns trajectory.
+<!-- slide -->
+![Design_9 HBonds](assets/hbonds_interface.png)
+**Interface Persistence**: Persistent hydrogen bonding network at the RBX1 interface.
+<!-- slide -->
 ![Design_9 Animation](assets/design_9_animation_v2.gif)
 **Atomistic Trajectory**: Visual verification of binding mode and loop stability.
+````
 
 ### Phase 15: Mass Generation (879 Backbones)
 Using the validated `design_9` interface as a blueprint, we launched a high-throughput processing. All 879 new backbones have been processed through the sequence design pipeline.
@@ -75,15 +84,20 @@ The results have been astonishing. We successfully discovered multiple "super-bi
 **Conclusion:** The high-throughput pipeline has successfully identified `batch2_design_3` as the next-generation lead for RBX1 interaction, demonstrating a **~60% improvement** in predicted binding interface confidence over `Design_9`.
 
 ### Comparative Molecular Dynamics (MD)
-To ensure this static prediction translates to dynamic stability, we extracted the trajectory data from a comparative GROMACS MD simulation for both leads.
-
-`batch2_design_3` clearly exhibits tighter interface locking and lower residue fluctuations throughout the trajectory phase, corroborating the Chai-1 confidence metrics:
-### Dynamic Stability Comparison
+To ensure this static prediction translates to### Dynamic Stability Comparison
 | Backbone RMSD (Comparison) | Residue Fluctuation (RMSF) |
 |:---:|:---:|
-| ![RMSD Comparison](assets/rmsd_comparison_premium.png) | ![RMSF Comparison](assets/rmsf_comparison.png) |
+| ![RMSD Comparison](assets/rmsd_comparison_premium.png) | ![RMSF Comparison](assets/rmsf_comparison_premium.png) |
 
 **Analysis**: `batch2_design_3` (Super-Binder) exhibits tighter interface locking and lower residue fluctuations throughout the trajectory phase.
+, corroborating the Chai-1 confidence metrics:
+````carousel
+![RMSD Comparison](assets/rmsd_comparison_premium.png)
+**Backbone RMSD Comparison**: `batch2_design_3` exhibits a lower, more rapidly stabilized global RMSD compared to `design_9`.
+<!-- slide -->
+![RMSF Comparison](assets/rmsf_comparison_premium.png)
+**Residue Fluctuation (RMSF)**: Termini and interface loops are markedly rigidified in the super-binder structure.
+````
 
 ### Final Technical Specs:
 - **Target**: RBX1 (SCF E3 Ubiquitin Ligase)
