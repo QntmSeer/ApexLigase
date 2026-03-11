@@ -1,19 +1,30 @@
 # LinkedIn Post Draft: Project ApexLigase — De Novo Discovery for RBX1 🧬
 
-I’m chill to reveal **ApexLigase**, a clinical-grade breakthrough in **de novo binder design** targeting **RBX1** (RING-box protein 1). 
+Spent some time recently working on a de novo binder design submission for RBX1 as part of the GEM x Adaptyv RBX1 Binder Design Competition.
 
-In the world of Targeted Protein Degradation (TPD), RBX1 is a critical lever. By designing high-affinity synthetic scaffolds from scratch, we’re opening new avenues for precision oncology where natural binders fall short.
+Did I choose the target? Not exactly 😄
 
-### 🔬 Technical Highlights:
-- **De Novo Scale**: Successfully navigated a massive design space, generating 879 candidates via **RFdiffusion** & **ProteinMPNN**.
-- **The "Super-Binder"**: Identified `batch2_design_3`, delivering a **60% affinity leap** over our validated baseline (`ipTM` = 0.266).
-- **High-Throughput Validation**: Currently pushing the **22ns+** mark of a 100ns GROMACS production run. 
-- **Resourceful Engineering**: Proud to have achieved this throughput on a single **NVIDIA L4 GPU** (GCP)—proving that research-grade simulation doesn't always require an H100 cluster when your code is containerized and optimized.
+RBX1 came with the challenge, and it turned out to be a genuinely interesting protein design problem. Competition link here: https://proteinbase.com/competitions/gem-adaptyv-rbx1
 
-A huge thank you to **Adaptyv Bio** for the design inspiration and to the **GemX** team for the compute support that allowed this project to run as lean as it is powerful. 🚀
+This project became a good exercise in stitching together RFdiffusion, ProteinMPNN, and GROMACS into one focused computational workflow for binder generation, prioritization, and structural evaluation.
 
-Next stop: Finalizing the 100ns trajectory and heading to the wet-lab for SPR testing! As I look toward my next challenge, I'm excited to keep pushing what's possible at the intersection of ML and structural biology.
 
-Check out the "clinical" repository here: [https://github.com/QntmSeer/ApexLigase.git]
+🔬 A few highlights from the work
 
-#ProteinDesign #DeNovo #AI #StructuralBiology #DrugDiscovery #GROMACS #AdaptyvBio #GemX #Biotech #ApexLigase #OpenToWork
+De novo at scale: Explored a design space of 879 candidates generated with RFdiffusion and ProteinMPNN
+
+Candidate prioritization: Narrowed the pool through computational screening to a smaller set of designs for deeper structural assessment
+
+Simulation in progress: Multiple top candidates are currently being evaluated through 100 ns GROMACS production runs, with early trajectory analysis already giving useful signals on stability and interface behavior
+
+Lean compute, real output: The workflow has been running on a single NVIDIA L4 on GCP, which has been a nice reminder that meaningful structural biology work does not always require oversized infrastructure when the pipeline is optimized and containerized
+
+Sharing one early MD visualization below from a computationally prioritized candidate.
+
+Big thanks to Adaptyv Bio and the GEM Workshop for putting together the challenge.
+
+And yes, before anyone asks why this ran on an L4 on GCP instead of some extravagant AWS setup, let’s just say the green Open to Work badge is still playing a quiet role in infrastructure decisions 😄
+
+Fun challenge, difficult target, and a solid reminder that constrained setups can still produce serious work.
+
+#ProteinDesign #DeNovoDesign #StructuralBiology #ProteinEngineering #GROMACS #AI #Biotech #DrugDiscovery #OpenToWork
