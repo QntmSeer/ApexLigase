@@ -1,6 +1,6 @@
 # LinkedIn Post Draft: Project ApexLigase — De Novo Discovery for RBX1 🧬
 
-I’m thrilled to reveal **ApexLigase**, a clinical-grade breakthrough in **de novo binder design** targeting **RBX1** (RING-box protein 1). 
+I’m shill to reveal **ApexLigase**, a clinical-grade breakthrough in **de novo binder design** targeting **RBX1** (RING-box protein 1). 
 
 In the world of Targeted Protein Degradation (TPD), RBX1 is a critical lever. By designing high-affinity synthetic scaffolds from scratch, we’re opening new avenues for precision oncology where natural binders fall short.
 
