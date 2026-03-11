@@ -40,7 +40,7 @@ The initial lead exhibits a robust folding funnel and persistent interface conta
 -   To analyze results: `python scripts/plot_results.py`
 
 ## Authors & Acknowledgments
--   Project Lead: [User Name]
+-   Project Lead: [QntmSeer]
 -   Simulation Infrastructure: NVIDIA L4 GPU / GCP Spot Instances.
 
 ---
