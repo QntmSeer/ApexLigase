@@ -29,14 +29,15 @@ The initial lead exhibits a robust folding funnel and persistent interface conta
 -   **Binding Interface**: Hydrogen bond persistence analysis confirms a stable network.
 
 ## Repository Structure
--   `data/`: Raw trajectories and structural files (PDB/GRO).
--   `plots/`: Validation metrics (RMSD, Rg, HBonds).
--   `scripts/`: Analysis and plotting utilities.
--   `config/`: GROMACS simulation parameters (.mdp files).
+-   `scripts/`: Core analysis and visualization pipelines.
+-   `utils/`: Helper scripts for format conversion and animation.
+-   `config/`: Simulation and design parameters (.yaml, .mdp).
+-   `assets/`: High-fidelity visuals (GIFs, premium plots).
+-   `deploy/`: Containerization and HPC orchestration.
 
 ## Usage
 -   To reproduce simulation: `gmx mdrun -s md.tpr`
--   To analyze results: `python scripts/plot_results.py`
+-   To analyze results: `python scripts/analyze_apex.py --mode analyze`
 
 ## Authors & Acknowledgments
 -   Project Lead: [QntmSeer]
