@@ -9,13 +9,11 @@ RBX1 came with the challenge, and it turned out to be a genuinely interesting pr
 This project became a good exercise in stitching together RFdiffusion, ProteinMPNN, and GROMACS into one focused computational workflow for binder generation, prioritization, and structural evaluation.
 
 
-🔬 A few highlights from the work
-
-De novo at scale: Explored a design space of 879 candidates generated with RFdiffusion and ProteinMPNN
-
-Candidate prioritization: Narrowed the pool through computational screening to a smaller set of designs for deeper structural assessment
-
-Simulation in progress: Multiple top candidates are currently being evaluated through 100 ns GROMACS production runs, with early trajectory analysis already giving useful signals on stability and interface behavior
+🔬 Some highlights:
+- **De Novo Scale**: Navigated the design space with 879 candidates via **RFdiffusion** & **ProteinMPNN**.
+- **The "Super-Binder"**: Found a lead (`batch2_design_3`) that’s looking sharp—hits a **60% affinity bump** over the validated baseline (`ipTM` = 0.266).
+- **Physical Validation**: Static $ipTM$ scores can be deceptive (the "plausibility trap"). To ensure we weren't just looking at a pretty decoy, I launched a 100ns GROMACS production run to confirm thermodynamic stability under thermal noise.
+- **Validation Status**: About **22ns** into the run now. Interface is rock solid.
 
 Lean compute, real output: The workflow has been running on a single NVIDIA L4 on GCP, which has been a nice reminder that meaningful structural biology work does not always require oversized infrastructure when the pipeline is optimized and containerized
 

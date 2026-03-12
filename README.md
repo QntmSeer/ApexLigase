@@ -11,7 +11,7 @@ This repository contains the computational pipeline and validation data for **De
 ## Design Pipeline
 1.  **Backbone Scaffolding**: Generated >800 scaffolds using **RFdiffusion**, targeting the RBX1 interface.
 2.  **Sequence Optimization**: Optimized residues for binding affinity and folding stability using **ProteinMPNN**.
-3.  **Molecular Dynamics Validation**: Conducted a 100ns production run in **GROMACS** (OPLS-AA force field, TIP3P water) to confirm structural integrity and binding persistence.
+3.  **Molecular Dynamics Validation**: Conducted a 100ns production run in **GROMACS** (OPLS-AA force field, TIP3P water). This is our critical "physical filter" to distinguish true binders from static AI "decoys" by testing interface stability under thermal fluctuations.
 
 ## Key Results: Design_9 Baseline
 The initial lead exhibits a robust folding funnel and persistent interface contact at the RBX1 binding site.
