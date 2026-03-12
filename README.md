@@ -1,5 +1,5 @@
-# NeatLigase
-> *Not a legend, but a neat ligase nonetheless.*
+# ApexLigase
+> *Peak-performance de novo binders for the E3 ubiquitin machinery.*
 
 
 [![GROMACS](https://img.shields.io/badge/Simulation-GROMACS_2024.2-blue.svg)]()
