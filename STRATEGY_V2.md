@@ -1,115 +1,123 @@
-# ApexLigase v2 — Next Generation Strategy
-## Derived from: GEM x Adaptyv RBX1 Binder Design Competition Full Analysis
+# ApexLigase v2 — Strategy & Lessons Learned
+# Updated: 2026-04-15 with actual Boltz2 rescore data
 
-**Date**: 2026-04-15  
-**Basis**: Complete analysis of all 322 selected submissions  
-**Status**: APPROVED FOR NEXT ITERATION
+## Boltz2 Rescore Results (v1 designs, ground truth)
 
----
+| Rank | Design | Boltz2 ipSAE | Boltz2 pLDDT | v1 Chai-1 ipTM | Δ rank | Pass v2? |
+|------|--------|-------------|--------------|----------------|--------|---------|
+| 1 | design_9 | **0.8948** | 0.84 | 0.626 (rank ~3) | ↑ | ✅ |
+| 2 | batch2_design_0 | **0.8273** | 0.88 | ~0.51 (rank ~8) | ↑↑↑ | ✅ |
+| 3 | design_52 | **0.8029** | 0.85 | ~0.51 (rank ~7) | ↑↑↑ | ✅ |
+| 4 | design_10 | **0.7732** | 0.86 | ~0.49 (rank ~9) | ↑↑↑ | ✅ |
+| 5 | design_16 | **0.7622** | 0.81 | 0.344 (rank ~10) | ↑↑↑ | ✅ |
+| 6 | design_18 | 0.5833 | 0.81 | ~0.52 | — | ❌ |
+| 7 | design_15 | 0.5362 | 0.86 | 0.547 | ↓ | ❌ |
+| 8 | design_21 | 0.4194 | 0.82 | 0.567 (rank **#2**) | ↓↓↓ | ❌ |
+| 9 | design_1 | 0.3732 | **0.91** | ~0.55 | ↓↓ | ❌ |
+| 10 | design_50 | 0.1874 | 0.82 | ~0.49 | ↓↓ | ❌ |
 
-## Core Strategy Shifts
-
-### What We Stop Doing
-- ❌ Using Chai-1 ipTM as primary filter
-- ❌ Generating charge-repeat coiled-coil scaffolds
-- ❌ Running RFdiffusion without hotspot conditioning
-- ❌ Single-pass design (generate → filter → submit)
-
-### What We Start Doing
-- ✅ Boltz2 ipSAE as **primary** computational filter (threshold: ≥0.70)
-- ✅ PDB mining with Foldseek/ESMFold to find natural RBX1-complementary folds
-- ✅ RFdiffusion with explicit RING domain hotspots: `C53,H57,C74,C77,W79`
-- ✅ Iterative refinement: BoltzGen → MPNN → Boltz2 (2–3 cycles)
-- ✅ Sequence complexity filter before selection
+**Competition reference**: winner violet-boar-fern = 0.93 ipSAE
 
 ---
 
-## RBX1 Interface Definition (Critical Knowledge)
+## Key findings
 
-**Target site**: RING domain Zn²⁺-binding loop  
-**Key residues** (from PDB: 1FBV / 4AP4):  
-- Cys53, His57 (Zn1 coordination)  
-- Cys74, Cys77 (Zn2 coordination)  
-- Trp79 (hydrophobic anchor)  
-- Pro49, Leu52, Leu71 (hydrophobic groove)
+### 1. Hit rate: 5/10 designs pass 0.70 ipSAE (50%)
+This is exceptional for a first-attempt pipeline. RFdiffusion+MPNN arm works.
+The submission ranked our designs incorrectly — we submitted 10 good designs
+but highlighted the wrong ones as our best.
 
-**Optimal binder geometry**:
-- Engages the Zn²⁺ coordinating loop from the exposed face
-- Makes contacts with Trp79/Leu71 hydrophobic groove
-- Does NOT rely on electrostatic complementarity of full surface
+### 2. The pLDDT=0.91 trap — design_1
+design_1 has the HIGHEST structural confidence in our set (pLDDT=0.91)
+but the SECOND WORST binding score (ipSAE=0.3732).
+Pure coiled-coil charge repeat. Folds perfectly. Binds nothing specifically.
+Chai-1 ranked it mid-table. Boltz2 correctly buried it.
+
+### 3. Metric inversion — design_21
+design_21 was our #2 pick by Chai-1 ipTM (0.567).
+By Boltz2 ipSAE it ranks 8th (0.4194).
+Charge-repeat scaffold: ELEKKLEELEAR repeating unit.
+Electrostatic complementarity ≠ geometric binding specificity.
+
+### 4. Hidden winners — batch2_design_0, design_52, design_10, design_16
+All of these ranked 7th–10th in our v1 submission.
+All four score above 0.76 on Boltz2 ipSAE.
+They were nearly cut. batch2_design_0 (0.8273) was a second-batch design
+that wasn't even our primary submission focus.
+
+### 5. design_9 is the seed
+ipSAE=0.8948, ptm=0.9303. Only 4 points below the competition winner.
+Already in our hands. Should be the anchor for all v2 diversification.
 
 ---
 
-## Pipeline v2 Specification
+## v2 Pipeline Rules (hardcoded from this data)
 
-### ARM A: Natural Scaffold Mining (NEW)
-```bash
-# Foldseek search against PDB for RBX1-binding-like folds
-foldseek easy-search rbx1_ring.pdb pdb foldseek_hits.tsv tmp \
-  --alignment-type 1 \
-  --tmscore-threshold 0.3
-# Extract top-100 hits → PDB mining → Caliby refinement
-```
+### Rule 0 — ALWAYS CHECK THE COMPETITION METRIC FIRST
+Before writing a single line of code:
+- What metric does the competition score?
+- What model generates that metric?
+- Install that model, run it on 2–3 designs, confirm scores are sane.
 
-### ARM B: Hotspot-Conditioned RFdiffusion (REVISED)
-```bash
-python run_inference.py \
-  --config-name "base_ij" \
-  inference.input_pdb="rbx1_binding_site.pdb" \
-  inference.num_designs=500 \
-  contigmap.contigs=["A53-79/0 60-100"] \
-  ppi.hotspot_res=["A53","A57","A74","A77","A79"] \
-  inference.output_prefix="arm_b_hotspot_designs"
-```
+### Rule 1 — Primary filter: Boltz2 ipSAE ≥ 0.70 (hard cutoff)
+No blending. If ipSAE < 0.70, discard. Period.
+- OLD: Score = 0.40*ipSAE + 0.25*chai1_pTM + 0.20*AF2_ipTM + 0.15*pLDDT
+- NEW: if boltz2_ipsae < 0.70: discard() else: score by ipSAE only
 
-### ARM C: BoltzGen Iterative (NEW)
+### Rule 2 — Reject charge-repeat scaffolds pre-GPU
+Apply before any scoring to save compute:
 ```python
-# Cycle: BoltzGen backbone → ProteinMPNN sequence → Boltz2 score → repeat
-for cycle in range(3):
-    backbone = boltzgen.sample(target=rbx1_ring, n_samples=200)
-    sequences = proteinmpnn.design(backbone, temperature=0.1, n_seq=4)
-    scores = boltz2.score(sequences, target=rbx1_ring)  # primary metric: ipSAE
-    top_seqs = scores[scores['ipSAE'] > 0.70]
-    # Feed back into next cycle
+def passes_complexity(seq):
+    charged = set('KRDEH')
+    run = 1
+    for i in range(1, len(seq)):
+        if seq[i] == seq[i-1] and seq[i] in charged:
+            run += 1
+            if run >= 4: return False  # charge run ≥ 4 = reject
+        else:
+            run = 1
+    charge_frac = sum(1 for aa in seq if aa in charged) / len(seq)
+    return charge_frac <= 0.40
+```
+
+### Rule 3 — Don't trust pLDDT alone
+pLDDT measures fold quality, not binding specificity.
+design_1: pLDDT=0.91, ipSAE=0.37 — perfect fold, near-zero binding.
+High pLDDT is necessary but not sufficient.
+
+### Rule 4 — Mine existing backbones before generating new ones
+We have 300 RFdiffusion backbones on the HPC from v1.
+Before any new run: rescore ALL with Boltz2 ipSAE.
+There are likely 10–20 more designs above 0.70 ipSAE sitting there.
+
+### Rule 5 — design_9 is the seed for all diversification
+62 AA, ipSAE=0.8948, ptm=0.9303.
+Run 50 ProteinMPNN variants at T=0.1, 0.2, 0.3.
+Score all with Boltz2. Any above 0.85 is competition-tier.
+
+---
+
+## v2 Scoring Formula
+
+```python
+# Primary gate (hard)
+if boltz2_ipsae < 0.70:
+    discard()
+
+# Ranking formula (after gate)
+score = (0.70 * boltz2_ipsae) + (0.30 * boltz2_plddt)
+
+# Secondary confirmation only (NOT a gate)
+# chai1_iptm used only as tiebreaker between designs with ipSAE within 0.02
 ```
 
 ---
 
-## Filter Stack (In Order)
+## Competition Checklist (pre-flight before any design work)
 
-1. **Sequence complexity** (reject charge repeats): `max_charge_run < 4`, `charge_frac < 0.45`
-2. **Boltz2 ipSAE** ≥ 0.70 (primary gate, replaces Chai-1 ipTM)  
-3. **pLDDT** ≥ 80 (structural confidence)
-4. **Grounding ipTM** ≥ 0.50 (must match known RBX1 interface geometry)
-5. **MD 50ns** (GROMACS, OPLS-AA, TIP3P): RMSD < 0.3 nm, persistent interface H-bonds
-
----
-
-## Targets for v2
-
-| Metric | v1 (best) | v2 Target |
-|---|---|---|
-| Boltz2 ipSAE | ~0.63 est. | ≥ 0.80 |
-| pLDDT | 88.95 | ≥ 85 |
-| Grounding ipTM | 0.76 | ≥ 0.70 |
-| Sequence length | 60–100 AA | 80–120 AA |
-| Charge repeat fraction | High | < 10% |
-
----
-
-## Seed for Iteration
-
-**design_9** (`AAALAAAVAAARAAAAAELAEARARAEALAAEGREEEGRRLLESAERRAETRAALIARVLAA`)  
-- Grounding ipTM: 0.76 (best in our pool)  
-- Chai-1 ipTM: 0.626  
-- Length: 60 AA  
-- Action: ProteinMPNN diversification (50 variants, T=0.2, fix hydrophobic core positions), evaluate with Boltz2
-
----
-
-## References
-
-- Full competition analysis: `COMPETITION_ANALYSIS.md`
-- Submission data: `submission/FINAL_SUBMISSION_TOP_10_GROUNDED.csv`
-- MD results: `results/manifest.json`, `assets/`
-- Competition URL: https://proteinbase.com/collections/gem-x-adaptyv-rbx1-binder-design-competition-selected-submissions
+- [ ] Read competition rules — identify exact scoring metric and model
+- [ ] Install competition scoring tool locally or on HPC  
+- [ ] Score 2 reference designs to confirm tool works correctly
+- [ ] Set primary filter to competition metric with 0.70 floor
+- [ ] Rescore any existing backbones from previous runs first
+- [ ] User's metric intuition overrides tool-preference arguments
