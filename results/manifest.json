@@ -1,0 +1,847 @@
+[
+  {
+    "artifact_id": "246de4f6-52a2-46f5-83ac-1b5979c1be40",
+    "artifact_type": "scores_csv_gcs_uri",
+    "filename": "scores.csv"
+  },
+  {
+    "artifact_id": "0e977b86-282f-4327-bd3c-e9d9a0238d66",
+    "artifact_type": "af2m_scores_model2",
+    "filename": "design_18_multimer.result.af2m_scores_model2.json"
+  },
+  {
+    "artifact_id": "84de3d66-f36a-4ede-8782-ca6eb0c101e6",
+    "artifact_type": "af2m_scores_model1",
+    "filename": "design_18_multimer.result.af2m_scores_model1.json"
+  },
+  {
+    "artifact_id": "403b2b7a-21c2-4725-934c-9ed24865457a",
+    "artifact_type": "af2m_scores",
+    "filename": "design_18_multimer.result.af2m_scores.json"
+  },
+  {
+    "artifact_id": "1e69f809-62e2-45fe-a800-bd2619936f4b",
+    "artifact_type": "colabfold_scores_model2",
+    "filename": "design_18_multimer.result.colabfold_scores_model2.json"
+  },
+  {
+    "artifact_id": "7b16f1b2-00fc-41fc-b39a-e1a92b7565a9",
+    "artifact_type": "colabfold_scores_model1",
+    "filename": "design_18_multimer.result.colabfold_scores_model1.json"
+  },
+  {
+    "artifact_id": "c485fc35-12de-4c6a-9064-aa0af6eb2923",
+    "artifact_type": "colabfold_scores",
+    "filename": "design_18_multimer.result.colabfold_scores.json"
+  },
+  {
+    "artifact_id": "1b2fe442-7695-44c6-953f-cf828e291d8f",
+    "artifact_type": "pdb",
+    "filename": "design_18_multimer.result.pdb"
+  },
+  {
+    "artifact_id": "45daee8d-ad30-4b48-bbf4-1d156d294f4f",
+    "artifact_type": "file",
+    "filename": "pair.sh"
+  },
+  {
+    "artifact_id": "cc270653-3450-405a-9e0e-8dfba7d8525e",
+    "artifact_type": "msa",
+    "filename": "pair.a3m"
+  },
+  {
+    "artifact_id": "0bb93947-8bec-4321-9a49-de9e07104085",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "8d9f21d6-2c74-446e-a23c-d6334c1eb79b",
+    "artifact_type": "file",
+    "filename": "msa.sh"
+  },
+  {
+    "artifact_id": "9b2099aa-ea02-41cc-a68d-d7a35ab619bb",
+    "artifact_type": "msa",
+    "filename": "bfd.mgnify30.metaeuk30.smag30.a3m"
+  },
+  {
+    "artifact_id": "f52c64c8-71d9-4e2b-8443-3a4cf1e7ff1d",
+    "artifact_type": "file",
+    "filename": "pdb70.m8"
+  },
+  {
+    "artifact_id": "8836a59a-9420-44d9-8c9a-58b549afccd5",
+    "artifact_type": "msa",
+    "filename": "uniref.a3m"
+  },
+  {
+    "artifact_id": "5c34ab7d-56bb-4ec9-895b-de79794ace5d",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "20a78570-89c3-403a-a0e9-0e13f0bc4b4b",
+    "artifact_type": "zip",
+    "filename": "design_18_multimer.result.zip"
+  },
+  {
+    "artifact_id": "77303f02-f782-41d8-869a-2b6eac4fbf52",
+    "artifact_type": "file",
+    "filename": "cite.bibtex"
+  },
+  {
+    "artifact_id": "d09dd35c-d31c-4048-8e35-8a13d8f028e5",
+    "artifact_type": "json",
+    "filename": "config.json"
+  },
+  {
+    "artifact_id": "2c6c7810-052b-4011-b5d9-050f1011ceea",
+    "artifact_type": "af2m_scores_model2",
+    "filename": "design_16_multimer.result.af2m_scores_model2.json"
+  },
+  {
+    "artifact_id": "7c7f571f-50f3-411a-9c41-302561787ea7",
+    "artifact_type": "af2m_scores_model1",
+    "filename": "design_16_multimer.result.af2m_scores_model1.json"
+  },
+  {
+    "artifact_id": "7da89da6-090d-4da9-a2e3-7d6c631c6062",
+    "artifact_type": "af2m_scores",
+    "filename": "design_16_multimer.result.af2m_scores.json"
+  },
+  {
+    "artifact_id": "dbe0b562-a381-455e-983a-fe01ecd799f7",
+    "artifact_type": "colabfold_scores_model2",
+    "filename": "design_16_multimer.result.colabfold_scores_model2.json"
+  },
+  {
+    "artifact_id": "687197e9-6fd9-411c-bdd7-075c69b852c3",
+    "artifact_type": "colabfold_scores_model1",
+    "filename": "design_16_multimer.result.colabfold_scores_model1.json"
+  },
+  {
+    "artifact_id": "ef4937d3-0bae-4a7e-9f75-36e8497fded4",
+    "artifact_type": "colabfold_scores",
+    "filename": "design_16_multimer.result.colabfold_scores.json"
+  },
+  {
+    "artifact_id": "5cb8db2a-f1fa-4db3-9c41-cbc2522b017f",
+    "artifact_type": "pdb",
+    "filename": "design_16_multimer.result.pdb"
+  },
+  {
+    "artifact_id": "21d831f1-f808-4988-b76b-f50efaeed245",
+    "artifact_type": "file",
+    "filename": "pair.sh"
+  },
+  {
+    "artifact_id": "5f2137ed-d136-45b0-aaa3-d9ebce205319",
+    "artifact_type": "msa",
+    "filename": "pair.a3m"
+  },
+  {
+    "artifact_id": "cc42d265-5e7b-4e30-a7a1-3952c5562cf4",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "c332189e-2c11-404f-aabe-21f013356f66",
+    "artifact_type": "file",
+    "filename": "msa.sh"
+  },
+  {
+    "artifact_id": "de4e79c7-e482-4b67-bb7d-ae280ff5e68b",
+    "artifact_type": "msa",
+    "filename": "bfd.mgnify30.metaeuk30.smag30.a3m"
+  },
+  {
+    "artifact_id": "7f5cf52a-4968-4373-8bda-9d5de97944aa",
+    "artifact_type": "file",
+    "filename": "pdb70.m8"
+  },
+  {
+    "artifact_id": "e4d54774-408a-427b-842b-fa0ceec20354",
+    "artifact_type": "msa",
+    "filename": "uniref.a3m"
+  },
+  {
+    "artifact_id": "d0e1a981-d4ef-4db0-9a64-9f749793f534",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "6e6c54d8-5aa1-40af-9611-7c59c5f96a09",
+    "artifact_type": "zip",
+    "filename": "design_16_multimer.result.zip"
+  },
+  {
+    "artifact_id": "ccee37cb-3d97-4a73-ab36-5e31c882226d",
+    "artifact_type": "file",
+    "filename": "cite.bibtex"
+  },
+  {
+    "artifact_id": "895b39ef-a9d7-4492-bef3-94844a30539a",
+    "artifact_type": "json",
+    "filename": "config.json"
+  },
+  {
+    "artifact_id": "f7b7e241-b3fd-494f-90ca-c266d7aed519",
+    "artifact_type": "af2m_scores_model2",
+    "filename": "design_1_multimer.result.af2m_scores_model2.json"
+  },
+  {
+    "artifact_id": "4bfd2d0b-effb-4bd6-9607-d739d824ea84",
+    "artifact_type": "af2m_scores_model1",
+    "filename": "design_1_multimer.result.af2m_scores_model1.json"
+  },
+  {
+    "artifact_id": "8e2db71b-28b0-4685-a33c-20cca6107d9b",
+    "artifact_type": "af2m_scores",
+    "filename": "design_1_multimer.result.af2m_scores.json"
+  },
+  {
+    "artifact_id": "ba211625-4754-4960-8a80-f28891fe4cef",
+    "artifact_type": "colabfold_scores_model2",
+    "filename": "design_1_multimer.result.colabfold_scores_model2.json"
+  },
+  {
+    "artifact_id": "fd4d8f27-c54f-466a-9321-135f3bd14b5c",
+    "artifact_type": "colabfold_scores_model1",
+    "filename": "design_1_multimer.result.colabfold_scores_model1.json"
+  },
+  {
+    "artifact_id": "7ae11a01-f3ba-460d-9762-4c12045e6bf8",
+    "artifact_type": "colabfold_scores",
+    "filename": "design_1_multimer.result.colabfold_scores.json"
+  },
+  {
+    "artifact_id": "baaf92ee-b553-4b30-8020-175fdb11786b",
+    "artifact_type": "pdb",
+    "filename": "design_1_multimer.result.pdb"
+  },
+  {
+    "artifact_id": "f2e6bf6f-e96a-4993-8b38-29e347cec890",
+    "artifact_type": "file",
+    "filename": "pair.sh"
+  },
+  {
+    "artifact_id": "d24bb80c-d165-4f60-867e-2f1c9675e923",
+    "artifact_type": "msa",
+    "filename": "pair.a3m"
+  },
+  {
+    "artifact_id": "094212b6-6386-40d6-9f4b-93d15857c0b6",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "95923895-4489-4c9d-abf2-55bb9b61bffa",
+    "artifact_type": "file",
+    "filename": "msa.sh"
+  },
+  {
+    "artifact_id": "77592621-a8d8-4356-91f0-5e23d91f18d9",
+    "artifact_type": "msa",
+    "filename": "bfd.mgnify30.metaeuk30.smag30.a3m"
+  },
+  {
+    "artifact_id": "472c8ade-6422-4aa2-8625-3ba6b6dce456",
+    "artifact_type": "file",
+    "filename": "pdb70.m8"
+  },
+  {
+    "artifact_id": "5993dcf3-943c-4d3d-ba0f-f4ba4367d238",
+    "artifact_type": "msa",
+    "filename": "uniref.a3m"
+  },
+  {
+    "artifact_id": "df60d05d-5b86-4cb4-8552-179dde730f45",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "94f06b2b-a284-443e-a95f-84d4c6198718",
+    "artifact_type": "zip",
+    "filename": "design_1_multimer.result.zip"
+  },
+  {
+    "artifact_id": "0da206aa-878e-47c0-93e5-bea50418ffe2",
+    "artifact_type": "file",
+    "filename": "cite.bibtex"
+  },
+  {
+    "artifact_id": "f498bb28-b5af-46da-a25a-2190daeb4a69",
+    "artifact_type": "json",
+    "filename": "config.json"
+  },
+  {
+    "artifact_id": "a62299c3-bdb9-4f2b-898f-1211f78498ec",
+    "artifact_type": "af2m_scores_model2",
+    "filename": "design_10_multimer.result.af2m_scores_model2.json"
+  },
+  {
+    "artifact_id": "24b29a48-ac62-4659-8bfd-2342c6b2bebd",
+    "artifact_type": "af2m_scores_model1",
+    "filename": "design_10_multimer.result.af2m_scores_model1.json"
+  },
+  {
+    "artifact_id": "ff65feea-6150-4ca4-99aa-1c9d6fa24dea",
+    "artifact_type": "af2m_scores",
+    "filename": "design_10_multimer.result.af2m_scores.json"
+  },
+  {
+    "artifact_id": "bf6cd600-a044-4b79-a85a-1df3aeff4aa3",
+    "artifact_type": "colabfold_scores_model2",
+    "filename": "design_10_multimer.result.colabfold_scores_model2.json"
+  },
+  {
+    "artifact_id": "e8e502e1-cfc2-4376-9507-99de20d29e60",
+    "artifact_type": "colabfold_scores_model1",
+    "filename": "design_10_multimer.result.colabfold_scores_model1.json"
+  },
+  {
+    "artifact_id": "9aba652a-1748-4733-b29c-06fefb73f948",
+    "artifact_type": "colabfold_scores",
+    "filename": "design_10_multimer.result.colabfold_scores.json"
+  },
+  {
+    "artifact_id": "e2f1fcbf-ab55-4d01-8419-1e275a30c68b",
+    "artifact_type": "pdb",
+    "filename": "design_10_multimer.result.pdb"
+  },
+  {
+    "artifact_id": "a31f1452-0dc0-4a8e-a196-822e98680120",
+    "artifact_type": "file",
+    "filename": "pair.sh"
+  },
+  {
+    "artifact_id": "bfe1e730-b973-4ada-a491-2e83581f4f9c",
+    "artifact_type": "msa",
+    "filename": "pair.a3m"
+  },
+  {
+    "artifact_id": "3fb4cbcb-c200-434a-a5c0-bc2271d0b175",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "9350e199-f2c0-469b-b2b4-f523187ad1fd",
+    "artifact_type": "file",
+    "filename": "msa.sh"
+  },
+  {
+    "artifact_id": "d26475f1-c7cf-442f-a526-262d486db601",
+    "artifact_type": "msa",
+    "filename": "bfd.mgnify30.metaeuk30.smag30.a3m"
+  },
+  {
+    "artifact_id": "6bfcdaee-5d27-4f2b-83ea-0885580016f2",
+    "artifact_type": "file",
+    "filename": "pdb70.m8"
+  },
+  {
+    "artifact_id": "499a0a9d-f041-4ea6-9a88-186489040691",
+    "artifact_type": "msa",
+    "filename": "uniref.a3m"
+  },
+  {
+    "artifact_id": "b789201f-97bc-4408-8c31-be3df4be23ec",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "299dc33a-3188-4068-a4d8-eccd78cb2f5a",
+    "artifact_type": "zip",
+    "filename": "design_10_multimer.result.zip"
+  },
+  {
+    "artifact_id": "074b3cd4-5eda-4b3f-8476-0985982059a0",
+    "artifact_type": "file",
+    "filename": "cite.bibtex"
+  },
+  {
+    "artifact_id": "22c19cfd-a22a-4c8a-8cca-0443974194be",
+    "artifact_type": "json",
+    "filename": "config.json"
+  },
+  {
+    "artifact_id": "62498de0-fc8a-47c7-b18e-7146fa708234",
+    "artifact_type": "af2m_scores_model2",
+    "filename": "design_15_multimer.result.af2m_scores_model2.json"
+  },
+  {
+    "artifact_id": "6f8a214a-e4e7-433a-b469-c020b86a7592",
+    "artifact_type": "af2m_scores_model1",
+    "filename": "design_15_multimer.result.af2m_scores_model1.json"
+  },
+  {
+    "artifact_id": "1b0ad1ac-f4c1-489b-b694-c17f3889047b",
+    "artifact_type": "af2m_scores",
+    "filename": "design_15_multimer.result.af2m_scores.json"
+  },
+  {
+    "artifact_id": "1cee1ef8-7ade-4d34-8958-3f208a850a6b",
+    "artifact_type": "colabfold_scores_model2",
+    "filename": "design_15_multimer.result.colabfold_scores_model2.json"
+  },
+  {
+    "artifact_id": "c33825df-9cda-4e6d-99b2-1ed9552a80a8",
+    "artifact_type": "colabfold_scores_model1",
+    "filename": "design_15_multimer.result.colabfold_scores_model1.json"
+  },
+  {
+    "artifact_id": "7d445119-4c16-4ce4-96df-16dbd0711e48",
+    "artifact_type": "colabfold_scores",
+    "filename": "design_15_multimer.result.colabfold_scores.json"
+  },
+  {
+    "artifact_id": "8a863f21-c969-4bb9-8e77-dfe2a30cd1ae",
+    "artifact_type": "pdb",
+    "filename": "design_15_multimer.result.pdb"
+  },
+  {
+    "artifact_id": "c352cf5d-7e6e-42a3-80a2-fc2bc78fba2f",
+    "artifact_type": "file",
+    "filename": "pair.sh"
+  },
+  {
+    "artifact_id": "bd39a646-b33e-412e-94df-431d8456d042",
+    "artifact_type": "msa",
+    "filename": "pair.a3m"
+  },
+  {
+    "artifact_id": "f852cc95-1473-4c30-b4d1-bfb25414abe0",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "0db9b441-e70d-4441-b6fc-0523ba457f2c",
+    "artifact_type": "file",
+    "filename": "msa.sh"
+  },
+  {
+    "artifact_id": "708d486d-1aac-42e2-8657-b18295431754",
+    "artifact_type": "msa",
+    "filename": "bfd.mgnify30.metaeuk30.smag30.a3m"
+  },
+  {
+    "artifact_id": "a3df8cb8-3674-4151-8c52-3a81f4129391",
+    "artifact_type": "file",
+    "filename": "pdb70.m8"
+  },
+  {
+    "artifact_id": "6ed55462-73b7-4e8f-a2f9-464d1621a0cf",
+    "artifact_type": "msa",
+    "filename": "uniref.a3m"
+  },
+  {
+    "artifact_id": "b2f37118-7587-491c-a5e0-06dc3aa21b51",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "ecb7ef23-696e-4dca-a1f2-160f09f8c31b",
+    "artifact_type": "zip",
+    "filename": "design_15_multimer.result.zip"
+  },
+  {
+    "artifact_id": "9c06e96c-4b29-47f5-8755-ab232f82ec8e",
+    "artifact_type": "file",
+    "filename": "cite.bibtex"
+  },
+  {
+    "artifact_id": "223b9961-1cf8-45f3-a543-752bf16dfb5a",
+    "artifact_type": "json",
+    "filename": "config.json"
+  },
+  {
+    "artifact_id": "b23b3f42-4da4-45c9-9349-d0f3a6f73aac",
+    "artifact_type": "af2m_scores_model2",
+    "filename": "batch2_design_0_multimer.result.af2m_scores_model2.json"
+  },
+  {
+    "artifact_id": "347e69f3-f011-40e6-b517-676869a0c75b",
+    "artifact_type": "af2m_scores_model1",
+    "filename": "batch2_design_0_multimer.result.af2m_scores_model1.json"
+  },
+  {
+    "artifact_id": "98c390d6-27de-413f-8b33-38fb70a81335",
+    "artifact_type": "af2m_scores",
+    "filename": "batch2_design_0_multimer.result.af2m_scores.json"
+  },
+  {
+    "artifact_id": "cfc76357-a86f-479b-b4e6-bd7ed4f0bf0f",
+    "artifact_type": "colabfold_scores_model2",
+    "filename": "batch2_design_0_multimer.result.colabfold_scores_model2.json"
+  },
+  {
+    "artifact_id": "c64ef5ac-b7a1-4ba2-85a0-5495bf0e5d4a",
+    "artifact_type": "colabfold_scores_model1",
+    "filename": "batch2_design_0_multimer.result.colabfold_scores_model1.json"
+  },
+  {
+    "artifact_id": "136a5d8f-e904-4894-951f-08457a6cb29c",
+    "artifact_type": "colabfold_scores",
+    "filename": "batch2_design_0_multimer.result.colabfold_scores.json"
+  },
+  {
+    "artifact_id": "6f44b5ba-689e-4610-acf4-7f5069be2a81",
+    "artifact_type": "pdb",
+    "filename": "batch2_design_0_multimer.result.pdb"
+  },
+  {
+    "artifact_id": "4ceca851-7106-433b-8f33-c061421acf1e",
+    "artifact_type": "file",
+    "filename": "pair.sh"
+  },
+  {
+    "artifact_id": "808679a7-7a5e-4373-a22a-9f1f77f7209f",
+    "artifact_type": "msa",
+    "filename": "pair.a3m"
+  },
+  {
+    "artifact_id": "91112aea-d144-4ba5-b41f-7ac88b16d8bf",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "1eb08e4d-8310-422c-8e06-175b2e14d3c1",
+    "artifact_type": "file",
+    "filename": "msa.sh"
+  },
+  {
+    "artifact_id": "0531a21c-59a3-4ce1-95b1-b677a6729382",
+    "artifact_type": "msa",
+    "filename": "bfd.mgnify30.metaeuk30.smag30.a3m"
+  },
+  {
+    "artifact_id": "50eb503f-9942-4fbe-9e4e-622446b4cf0e",
+    "artifact_type": "file",
+    "filename": "pdb70.m8"
+  },
+  {
+    "artifact_id": "639fa420-5840-41a5-9b13-53d8e69686c7",
+    "artifact_type": "msa",
+    "filename": "uniref.a3m"
+  },
+  {
+    "artifact_id": "1560cd4f-b625-413c-b1a5-63fa02954b08",
+    "artifact_type": "file",
+    "filename": "out.tar.gz"
+  },
+  {
+    "artifact_id": "1b93a62f-ef7f-4601-8749-bc2b1df82484",
+    "artifact_type": "zip",
+    "filename": "batch2_design_0_multimer.result.zip"
+  },
+  {
+    "artifact_id": "dfb0ba47-eb57-4aa0-a7f9-822c51aff0a5",
+    "artifact_type": "file",
+    "filename": "cite.bibtex"
+  },
+  {
+    "artifact_id": "eba91681-6a45-4f95-843d-11006c2d41ea",
+    "artifact_type": "json",
+    "filename": "config.json"
+  },
+  {
+    "artifact_id": "42cd0da4-73b8-410f-9ddc-bbbe4dd55370",
+    "artifact_type": "json",
+    "filename": "design_16_seq_1.metadata.json"
+  },
+  {
+    "artifact_id": "976eda47-cbd1-4043-93df-de03a927fac7",
+    "artifact_type": "json",
+    "filename": "T_0.1_sample_2_score_0.8844_plddt.json"
+  },
+  {
+    "artifact_id": "e08f94a1-1f96-4c57-a870-efe98b54e92b",
+    "artifact_type": "pdb",
+    "filename": "T_0.1_sample_2_score_0.8844.pdb"
+  },
+  {
+    "artifact_id": "b5dda9d3-511e-4240-8f2b-e186a0ac3345",
+    "artifact_type": "json",
+    "filename": "design_15_seq_1.metadata.json"
+  },
+  {
+    "artifact_id": "32b963d6-2a6f-4ba0-9937-89ae0bb3d984",
+    "artifact_type": "json",
+    "filename": "T_0.1_sample_2_score_0.9588_plddt.json"
+  },
+  {
+    "artifact_id": "7f579a7e-e03b-4420-aeec-3951ff7cda05",
+    "artifact_type": "pdb",
+    "filename": "T_0.1_sample_2_score_0.9588.pdb"
+  },
+  {
+    "artifact_id": "92e0c166-5449-496a-b47b-72e93cfa6163",
+    "artifact_type": "json",
+    "filename": "design_1_seq_2.metadata.json"
+  },
+  {
+    "artifact_id": "bbb9a315-c84d-4477-ade2-632c6cf4815a",
+    "artifact_type": "json",
+    "filename": "T_0.1_sample_3_score_1.0129_plddt.json"
+  },
+  {
+    "artifact_id": "26e90642-0cbb-472c-b543-8a076666aad8",
+    "artifact_type": "pdb",
+    "filename": "T_0.1_sample_3_score_1.0129.pdb"
+  },
+  {
+    "artifact_id": "8b585869-ef07-44c2-a710-05733fc9119a",
+    "artifact_type": "json",
+    "filename": "design_18_seq_3.metadata.json"
+  },
+  {
+    "artifact_id": "9bf92c9e-951b-4c78-9930-63a778f562c4",
+    "artifact_type": "json",
+    "filename": "T_0.1_sample_4_score_0.9023_plddt.json"
+  },
+  {
+    "artifact_id": "42849c4d-ce62-48e5-8837-ff2017a100da",
+    "artifact_type": "pdb",
+    "filename": "T_0.1_sample_4_score_0.9023.pdb"
+  },
+  {
+    "artifact_id": "ea21b212-5f03-4814-8a90-0a6766e2641c",
+    "artifact_type": "json",
+    "filename": "batch2_design_0_seq_1.metadata.json"
+  },
+  {
+    "artifact_id": "005a2b75-5bff-4579-bd0f-3cce0d8ee432",
+    "artifact_type": "json",
+    "filename": "T_0.1_sample_2_score_1.0887_plddt.json"
+  },
+  {
+    "artifact_id": "fc25192b-596b-4d55-ac93-e8fabfa558fc",
+    "artifact_type": "pdb",
+    "filename": "T_0.1_sample_2_score_1.0887.pdb"
+  },
+  {
+    "artifact_id": "98fa1373-1b91-4729-a00d-9e1225ce4dc6",
+    "artifact_type": "json",
+    "filename": "design_10_seq_3.metadata.json"
+  },
+  {
+    "artifact_id": "07533d09-ddd8-406b-bc81-925de7e20288",
+    "artifact_type": "json",
+    "filename": "T_0.1_sample_4_score_0.9861_plddt.json"
+  },
+  {
+    "artifact_id": "5f42d17a-1d43-4143-9f5d-b72fb09692d5",
+    "artifact_type": "pdb",
+    "filename": "T_0.1_sample_4_score_0.9861.pdb"
+  },
+  {
+    "artifact_id": "8eea84d4-c5f5-41cb-8c9d-c13b6a559849",
+    "artifact_type": "binder_ref_structures",
+    "filename": "design_18_ref.pdb"
+  },
+  {
+    "artifact_id": "4800e8fc-3169-4536-aa85-bad61e776229",
+    "artifact_type": "binder_ref_structures",
+    "filename": "design_16_ref.pdb"
+  },
+  {
+    "artifact_id": "cbb48b28-ca80-48ef-8d06-cb83e22a79ca",
+    "artifact_type": "binder_ref_structures",
+    "filename": "design_15_ref.pdb"
+  },
+  {
+    "artifact_id": "788c7289-456c-482a-b2f7-5718b670786c",
+    "artifact_type": "binder_ref_structures",
+    "filename": "design_10_ref.pdb"
+  },
+  {
+    "artifact_id": "4d67ebf6-84a6-413e-8672-a4b707aa5441",
+    "artifact_type": "binder_ref_structures",
+    "filename": "design_1_ref.pdb"
+  },
+  {
+    "artifact_id": "f4c03ba2-476b-48f1-a5da-738f8cf5103d",
+    "artifact_type": "binder_ref_structures",
+    "filename": "batch2_design_0_ref.pdb"
+  },
+  {
+    "artifact_id": "6c2743b2-8fe1-4f86-8956-b20ba06c379e",
+    "artifact_type": "multimer_fastas",
+    "filename": "design_18_multimer.fa"
+  },
+  {
+    "artifact_id": "342db65c-71d3-422e-a538-18916837bdf8",
+    "artifact_type": "multimer_fastas",
+    "filename": "design_16_multimer.fa"
+  },
+  {
+    "artifact_id": "53ed9ec2-9b12-406e-9d83-1691bac9de69",
+    "artifact_type": "multimer_fastas",
+    "filename": "design_15_multimer.fa"
+  },
+  {
+    "artifact_id": "eec3e430-1438-46c2-81d0-aa626195dcc8",
+    "artifact_type": "multimer_fastas",
+    "filename": "design_10_multimer.fa"
+  },
+  {
+    "artifact_id": "17cfe992-f971-4391-ab77-95526100a821",
+    "artifact_type": "multimer_fastas",
+    "filename": "design_1_multimer.fa"
+  },
+  {
+    "artifact_id": "1fbe73f4-2d9e-4c62-989b-580135b3846a",
+    "artifact_type": "multimer_fastas",
+    "filename": "batch2_design_0_multimer.fa"
+  },
+  {
+    "artifact_id": "dc5cd019-fa85-4e21-ab1b-e01b62345848",
+    "artifact_type": "fasta_individual",
+    "filename": "design_18_seq_3.fa"
+  },
+  {
+    "artifact_id": "292988c4-0fc4-4546-965c-46a25c73f1db",
+    "artifact_type": "fasta_individual",
+    "filename": "design_18_seq_2.fa"
+  },
+  {
+    "artifact_id": "4b43195b-c6d4-4126-aac0-b936476227f1",
+    "artifact_type": "fasta_individual",
+    "filename": "design_18_seq_1.fa"
+  },
+  {
+    "artifact_id": "b7143b5b-d7a0-47e5-a918-f6211a910432",
+    "artifact_type": "fasta_individual",
+    "filename": "design_18_seq_0.fa"
+  },
+  {
+    "artifact_id": "9e248ab5-c6e5-4d4c-ab3c-44853b48d6bb",
+    "artifact_type": "fasta",
+    "filename": "design_18_sequences.fa"
+  },
+  {
+    "artifact_id": "24ca1872-25f4-4c37-9234-c9396fa0ba10",
+    "artifact_type": "fasta_individual",
+    "filename": "design_16_seq_3.fa"
+  },
+  {
+    "artifact_id": "29632073-c335-4c17-9386-b69036625866",
+    "artifact_type": "fasta_individual",
+    "filename": "design_16_seq_2.fa"
+  },
+  {
+    "artifact_id": "e036d3de-d8d0-4a83-9a59-fa1bccbb449c",
+    "artifact_type": "fasta_individual",
+    "filename": "design_16_seq_1.fa"
+  },
+  {
+    "artifact_id": "655aebc3-6f4e-4d60-8f53-b5cb13999fe9",
+    "artifact_type": "fasta_individual",
+    "filename": "design_16_seq_0.fa"
+  },
+  {
+    "artifact_id": "564d9917-660d-4d19-bc5a-386f120b5ec2",
+    "artifact_type": "fasta",
+    "filename": "design_16_sequences.fa"
+  },
+  {
+    "artifact_id": "a34564b1-ae71-4ab0-a173-69ac2457d066",
+    "artifact_type": "fasta_individual",
+    "filename": "design_15_seq_3.fa"
+  },
+  {
+    "artifact_id": "a9342454-ac1b-434b-a256-75573eb1492a",
+    "artifact_type": "fasta_individual",
+    "filename": "design_15_seq_2.fa"
+  },
+  {
+    "artifact_id": "80fbd9eb-d512-4640-a317-24046c69ea07",
+    "artifact_type": "fasta_individual",
+    "filename": "design_15_seq_1.fa"
+  },
+  {
+    "artifact_id": "3e18d304-af28-4795-941e-a70dba7494f6",
+    "artifact_type": "fasta_individual",
+    "filename": "design_15_seq_0.fa"
+  },
+  {
+    "artifact_id": "c8d26dad-3525-468e-a5c7-eb3db2d1c814",
+    "artifact_type": "fasta",
+    "filename": "design_15_sequences.fa"
+  },
+  {
+    "artifact_id": "9c6608e0-5873-4b5e-ace6-f5c093df075e",
+    "artifact_type": "fasta_individual",
+    "filename": "design_10_seq_3.fa"
+  },
+  {
+    "artifact_id": "efd41475-a383-43b0-bddb-d08b60e2dbbe",
+    "artifact_type": "fasta_individual",
+    "filename": "design_10_seq_2.fa"
+  },
+  {
+    "artifact_id": "bd32ec4e-0cfe-49ac-a97b-42f56437050c",
+    "artifact_type": "fasta_individual",
+    "filename": "design_10_seq_1.fa"
+  },
+  {
+    "artifact_id": "8278fc2c-6b77-4dd2-89e4-1eccbc26814c",
+    "artifact_type": "fasta_individual",
+    "filename": "design_10_seq_0.fa"
+  },
+  {
+    "artifact_id": "a34f0c89-e997-4b85-86e7-ca471c29dd7b",
+    "artifact_type": "fasta",
+    "filename": "design_10_sequences.fa"
+  },
+  {
+    "artifact_id": "3dda5814-868e-4b97-a74f-9389761f64d5",
+    "artifact_type": "fasta_individual",
+    "filename": "design_1_seq_3.fa"
+  },
+  {
+    "artifact_id": "3ecf8b79-c533-49b8-b745-fef25d6a1ecd",
+    "artifact_type": "fasta_individual",
+    "filename": "design_1_seq_2.fa"
+  },
+  {
+    "artifact_id": "f06bfe8e-a01e-4b3d-a610-8b6df3d6026a",
+    "artifact_type": "fasta_individual",
+    "filename": "design_1_seq_1.fa"
+  },
+  {
+    "artifact_id": "232f1cc2-0a3b-493d-8314-24e2a4073584",
+    "artifact_type": "fasta_individual",
+    "filename": "design_1_seq_0.fa"
+  },
+  {
+    "artifact_id": "38d14adb-e8ec-4c08-9214-132992c0fdd1",
+    "artifact_type": "fasta",
+    "filename": "design_1_sequences.fa"
+  },
+  {
+    "artifact_id": "5e3b2549-ca77-4a87-897f-d88ada557750",
+    "artifact_type": "fasta_individual",
+    "filename": "batch2_design_0_seq_3.fa"
+  },
+  {
+    "artifact_id": "3ccfbd85-197b-4c4a-bc36-21582e561d1d",
+    "artifact_type": "fasta_individual",
+    "filename": "batch2_design_0_seq_2.fa"
+  },
+  {
+    "artifact_id": "4114849a-278f-4bc8-ab95-bbe0a85f0677",
+    "artifact_type": "fasta_individual",
+    "filename": "batch2_design_0_seq_1.fa"
+  },
+  {
+    "artifact_id": "ac09ac17-33d7-4639-a2cc-b902ecfb5643",
+    "artifact_type": "fasta_individual",
+    "filename": "batch2_design_0_seq_0.fa"
+  },
+  {
+    "artifact_id": "3ff88c6c-a360-4bd2-9f7e-84aac732dea1",
+    "artifact_type": "fasta",
+    "filename": "batch2_design_0_sequences.fa"
+  }
+]
