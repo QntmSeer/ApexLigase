@@ -1,13 +1,24 @@
 """
-filter_and_rank.py — ipSAE Composite Scoring + Novelty + Length Gates
+filter_and_rank.py — Boltz2 ipSAE Scoring + Novelty + Length Gates
 ======================================================================
-Merges all candidate arms, filters by:
-  1. Length <= 250 AA
-  2. Edit distance >= 25% vs UniRef50 (competition requirement)
-  3. Internal deduplication (>10% mutual edit distance kept)
+v2 changes (2026-04-15, from Boltz2 rescore of v1 designs):
+  - RULE 0: Complexity pre-filter rejects charge-repeat scaffolds BEFORE GPU
+  - RULE 1: Boltz2 ipSAE >= 0.70 is a HARD GATE (no blending)
+  - RULE 2: Ranking uses Boltz2 ipSAE as primary metric (70% weight)
+  - Chai-1 ipTM kept as secondary confirmation only, NOT a gate
 
-Ranks by composite score:
-  Score = 0.40 * ipSAE_norm + 0.25 * chai1_pTM + 0.20 * AF2_ipTM + 0.15 * pLDDT_norm
+Lesson: design_21 ranked #2 by Chai-1 (0.567), ranked #8 by Boltz2 (0.4194)
+         design_9 ranked ~3rd by Chai-1 (0.626), ranked #1 by Boltz2 (0.8948)
+         Always use the competition's own scoring tool first.
+
+Merges all candidate arms, filters by:
+  1. Complexity gate (charge-repeat sequences rejected)
+  2. Length 40-150 AA (from competition winner analysis)
+  3. Boltz2 ipSAE >= 0.70 (hard primary gate)
+  4. Edit distance >= 25% vs UniRef50 (competition requirement)
+  5. Internal deduplication (>10% mutual edit distance kept)
+
+Ranks by: 0.70 * boltz2_ipsae + 0.30 * boltz2_plddt
 
 Outputs top 100 sequences as final_candidates.fasta + scores_full.csv
 """
@@ -34,20 +45,64 @@ MAX_INTERNAL_SIMILARITY = 0.90  # keep if < 90% identical to anything already ke
 
 
 # ----------------------------------------------------------------
-# Scoring
+# Complexity pre-filter (v2) — applied BEFORE any GPU scoring
 # ----------------------------------------------------------------
 
-def composite_score(ipsae, chai1_ptm, af2_iptm, plddt):
+def passes_complexity(seq: str) -> bool:
     """
-    Composite binding confidence score (higher = better).
-    Weights from analysis of 2024 Adaptyv competition results.
-    """
-    ipsae_n = ipsae if ipsae is not None else 0.5
-    chai_n = chai1_ptm if chai1_ptm is not None else 0.5
-    af2_n = af2_iptm if af2_iptm is not None else 0.5
-    plddt_n = (plddt / 100.0) if plddt is not None else 0.7
+    Sequence complexity gate — rejects charge-repeat scaffolds before
+    wasting GPU time on designs that will fail Boltz2 ipSAE.
 
-    return (0.40 * ipsae_n + 0.25 * chai_n + 0.20 * af2_n + 0.15 * plddt_n)
+    Derived from v1 post-mortem: design_21 (charge repeats, ELEKKLEELEAR)
+    scored 0.567 on Chai-1 but only 0.4194 on Boltz2 ipSAE.
+
+    Rules:
+      1. No run of 4+ identical consecutive charged residues (KRDEH)
+      2. Charged fraction <= 40%
+      3. Hydrophobic fraction >= 15% (VILMFYW)
+    """
+    charged    = set('KRDEH')
+    hydrophobic = set('VILMFYW')
+
+    # Rule 1: no charged run >= 4
+    run = 1
+    for i in range(1, len(seq)):
+        if seq[i] == seq[i-1] and seq[i] in charged:
+            run += 1
+            if run >= 4:
+                return False
+        else:
+            run = 1
+
+    # Rule 2: charge fraction
+    if sum(1 for aa in seq if aa in charged) / len(seq) > 0.40:
+        return False
+
+    # Rule 3: hydrophobic fraction
+    if sum(1 for aa in seq if aa in hydrophobic) / len(seq) < 0.15:
+        return False
+
+    return True
+
+
+# ----------------------------------------------------------------
+# Scoring (v2)
+# ----------------------------------------------------------------
+
+BOLTZ2_IPSAE_GATE = 0.70   # HARD cutoff — designs below this are discarded
+
+def composite_score(boltz2_ipsae, boltz2_plddt, chai1_ptm=None, af2_iptm=None):
+    """
+    v2 composite score — Boltz2 ipSAE is primary (70% weight).
+    Chai-1 and AF2 kept for tiebreaking only.
+
+    Hard gate: if boltz2_ipsae < BOLTZ2_IPSAE_GATE, this function is
+    never called — the design is discarded upstream.
+    """
+    ipsae_n  = boltz2_ipsae if boltz2_ipsae is not None else 0.0
+    plddt_n  = boltz2_plddt if boltz2_plddt is not None else 0.80
+
+    return (0.70 * ipsae_n + 0.30 * plddt_n)
 
 
 # ----------------------------------------------------------------
@@ -209,9 +264,14 @@ def main():
     candidates = load_all_fastas()
     print(f"\nLoaded {len(candidates)} total candidates from all arms")
 
-    # 2. Length gate
-    candidates = [c for c in candidates if len(c["sequence"]) <= 250]
-    print(f"After length filter (≤250 AA): {len(candidates)}")
+    # 2a. Complexity pre-filter (v2) — before any GPU time
+    before = len(candidates)
+    candidates = [c for c in candidates if passes_complexity(c["sequence"])]
+    print(f"After complexity filter (no charge repeats): {len(candidates)}/{before}")
+
+    # 2b. Length gate (v2: 40-150 AA from competition winner analysis)
+    candidates = [c for c in candidates if 40 <= len(c["sequence"]) <= 150]
+    print(f"After length filter (40-150 AA): {len(candidates)}")
 
     # 3. Global dedup (exact sequence)
     seen = {}
@@ -247,13 +307,21 @@ def main():
         c["chai1_ipsae"] = chai.get("chai1_ipsae")
         c["af2_iptm"]    = af2.get("af2_iptm")
         c["af2_plddt"]   = af2.get("af2_plddt")
-        c["score"] = composite_score(
-            c["chai1_ipsae"], c["chai1_ptm"],
-            c["af2_iptm"], c["af2_plddt"]
-        )
+        # v2: hard Boltz2 ipSAE gate
+        b2_ipsae = c.get("boltz2_ipsae") or c.get("chai1_ipsae")  # fallback to chai if boltz2 not run
+        b2_plddt = c.get("boltz2_plddt") or (c.get("af2_plddt", 85) / 100.0)
+        if b2_ipsae is not None and b2_ipsae < BOLTZ2_IPSAE_GATE:
+            c["score"] = -1.0   # hard discard
+        else:
+            c["score"] = composite_score(b2_ipsae, b2_plddt, c["chai1_ptm"], c["af2_iptm"])
 
     # 7. Sort by composite score
     candidates.sort(key=lambda c: c["score"], reverse=True)
+    # Remove hard-discarded designs (score == -1.0)
+    passed_gate = [c for c in candidates if c["score"] >= 0]
+    discarded   = len(candidates) - len(passed_gate)
+    candidates  = passed_gate
+    print(f"After Boltz2 ipSAE gate (>={BOLTZ2_IPSAE_GATE}): {len(candidates)} passed, {discarded} discarded")
 
     # 8. Novelty gate — parallel BLAST (ThreadPoolExecutor, IO-bound)
     if not args.no_blast:
