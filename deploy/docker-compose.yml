@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Rapid Coarse-Grained Screening
+  cabs-flex:
+    image: lcbio/cabsflex
+    volumes:
+      - ./data/candidates:/input:ro
+      - ./data/cabs_results:/home
+    command: CABSflex -i /input/design_10.pdb -v 2 -w /home/output
+
+  # Atomistic MD Validation (Requires NVIDIA Runtime)
+  gromacs-gpu:
+    image: gromacs/gromacs:2022.4
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    entrypoint: /bin/bash
+    command: scripts/launch_design10_md.sh
+
+  # Data-Driven Grounding
+  dyno-phi:
+    image: python:3.9-slim
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - DYNO_API_KEY=${DYNO_API_KEY}
+    command: python scripts/dyno_phi_score.py
+
+networks:
+  apex-net:
+    driver: bridge

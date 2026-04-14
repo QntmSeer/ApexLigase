@@ -1,0 +1,7 @@
+name,max_rmsf_binder,mean_rmsf_binder,max_rmsf_interface,n_residues_binder
+batch2_design_0,13.455,4.235,7.683,66
+design_1,5.833,1.701,2.728,64
+design_10,6.478,1.975,1.828,94
+design_15,6.302,1.486,1.789,74
+design_16,ERROR,ERROR,ERROR,0
+design_18,ERROR,ERROR,ERROR,0

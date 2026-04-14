@@ -1,0 +1,32 @@
+# This file was created Thu Mar 26 22:04:28 2026
+# Created by:
+#                :-) GROMACS - gmx gyrate, 2024.2-conda_forge (-:
+# 
+# Executable:   /opt/conda/envs/gmx_gpu/bin.AVX2_256/gmx
+# Data prefix:  /opt/conda/envs/gmx_gpu
+# Working dir:  /home/qntmqrks/rbx1_design/Phase18_ProductionMD/design_10
+# Command line:
+#   gmx gyrate -s md_100ns.tpr -f md_100ns.xtc -o gyrate_d10.xvg -e 45
+# gmx gyrate is part of G R O M A C S:
+#
+# Gallium Rubidium Oxygen Manganese Argon Carbon Silicon
+#
+@    title "Radius of gyration (total and around axes)"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Radius (nm)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Rg"
+@ s1 legend "Rg/sX/N"
+@ s2 legend "Rg/sY/N"
+@ s3 legend "Rg/sZ/N"
+      0.000 1.993852 1.769186 1.531792 1.573049
+     10.000 1.977748 1.758870 1.518205 1.557050
+     20.000 1.973790 1.759206 1.523056 1.541816
+     30.000 1.994860 1.781236 1.553872 1.540006
+     40.000 4.465923 1.991879 4.296832 4.178349
