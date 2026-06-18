@@ -41,6 +41,7 @@ echo "================================================================"
 # Two temperatures: 0.1 (conservative) and 0.3 (diverse)
 for TEMP in 0.1 0.3; do
     conda run -n rfdiffusion python "$MPNN_DIR/protein_mpnn_run.py" \
+        --model_name "soluble_model_30_2" \
         --pdb_path_multi <(ls "$OUT_DIFF"/*.pdb | head -150 | tr '\n' ',' | sed 's/,$//') \
         --out_folder "$OUT_MPNN/temp_${TEMP}" \
         --num_seq_per_target 5 \

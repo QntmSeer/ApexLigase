@@ -75,7 +75,7 @@ def passes_complexity(seq: str) -> bool:
             run = 1
 
     # Rule 2: charge fraction
-    if sum(1 for aa in seq if aa in charged) / len(seq) > 0.40:
+    if sum(1 for aa in seq if aa in charged) / len(seq) > 0.55:
         return False
 
     # Rule 3: hydrophobic fraction

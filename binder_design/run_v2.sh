@@ -93,6 +93,7 @@ if [ -f "$SEED_PDB" ]; then
     for TEMP in 0.1 0.2 0.3; do
         conda run -n rfdiffusion python \
             "$HOME/rbx1_binder_design/ProteinMPNN/protein_mpnn_run.py" \
+            --model_name "soluble_model_30_2" \
             --pdb_path "$SEED_PDB" \
             --chain_id_jsonl /dev/null \
             --fixed_positions_jsonl /dev/null \
@@ -149,6 +150,7 @@ section "STEP 3: ProteinMPNN on RFdiffusion backbones"
 for TEMP in 0.1 0.2 0.3; do
     conda run -n rfdiffusion python \
         "$HOME/rbx1_binder_design/ProteinMPNN/protein_mpnn_run.py" \
+        --model_name "soluble_model_30_2" \
         --pdb_path_multi <(ls "$OUT_DIFF"/*.pdb | head -200 | tr '\n' ',' | sed 's/,$//') \
         --out_folder "$OUT_MPNN/temp_${TEMP}" \
         --num_seq_per_target 5 \
@@ -207,7 +209,7 @@ for name, seq in seqs:
         else:
             run = 1
     if bad: continue
-    if sum(1 for aa in seq if aa in charged)/len(seq) > 0.45: continue
+    if sum(1 for aa in seq if aa in charged)/len(seq) > 0.55: continue
     if sum(1 for aa in seq if aa in hydro)/len(seq) < 0.15: continue
     passed.append((name, seq))
 
